@@ -1,48 +1,145 @@
-body {
-  background: #f5f6fa;
-  font-family: 'Segoe UI', Arial, sans-serif;
-}
-.container {
-  max-width: 400px;
-  margin: 48px auto;
-  background: #fff;
-  padding: 32px 24px 24px 24px;
-  border-radius: 12px;
-  box-shadow: 0 2px 16px rgba(44,62,80,0.08);
-}
-h2 {
-  text-align: center;
-  margin-bottom: 24px;
-  color: #222;
-}
-form label {
-  display: block;
-  margin-bottom: 6px;
-  color: #2980b9;
-  font-weight: 500;
-}
-form input,
-form select {
-  width: 100%;
-  padding: 8px 10px;
-  margin-bottom: 16px;
-  border: 1px solid #d3d3d3;
-  border-radius: 6px;
+/* 🌐 Global Styles */
+* {
   box-sizing: border-box;
-  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, sans-serif;
 }
-form button {
+
+body {
+  background: linear-gradient(135deg, #f3f4f7, #e9ecf2);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 100vh;
+  padding: 40px 20px;
+}
+
+/* 📝 Form Container */
+form {
+  background: #ffffff;
   width: 100%;
-  padding: 10px 0;
-  background: #2980b9;
-  color: #fff;
-  border: none;
-  border-radius: 6px;
-  font-size: 1.1rem;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s;
+  max-width: 700px;
+  padding: 32px;
+  border-radius: 20px;
+  box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.08);
+  display: grid;
+  gap: 20px;
+  animation: fadeIn 0.6s ease-in-out;
 }
-form button:hover {
-  background: #3498db;
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #2c3e50;
+}
+
+.note {
+  text-align: center;
+  color: #6c757d;
+  font-size: 15px;
+  margin-bottom: 10px;
+}
+
+/* 🧍‍♂️ Form Fields */
+input, select, textarea, button {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 2px solid #ccd2da;
+  border-radius: 10px;
+  background-color: #f9fafc;
+  transition: 0.25s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #3b82f6;
+  background-color: #fff;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+}
+
+/* 📁 Labels and Fieldsets */
+label, legend {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+  display: block;
+}
+
+fieldset {
+  border: 2px solid #e3e7ed;
+  padding: 16px;
+  border-radius: 12px;
+  background: #f9fafc;
+}
+
+fieldset legend {
+  padding: 0 6px;
+}
+
+/* ✅ Checkbox Styling */
+input[type="checkbox"] {
+  width: auto;
+  margin-right: 8px;
+  transform: scale(1.2);
+}
+
+/* 🔘 Button */
+button {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+  color: white;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  transform: translateY(-2px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* 🖥️ Grid Layout */
+.row {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* 🪄 Animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 📤 Result Message */
+#result {
+  text-align: center;
+  font-weight: 600;
+  padding: 10px;
+  border-radius: 8px;
+}
+
+#result.success {
+  color: #15803d;
+  background: #dcfce7;
+}
+
+#result.error {
+  color: #b91c1c;
+  background: #fee2e2;
 }
